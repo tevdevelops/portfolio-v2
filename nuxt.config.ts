@@ -25,6 +25,7 @@ export default defineNuxtConfig({
   css: ['@assets/css/main.scss'],
 
   colorMode: {
-    classSuffix: '', // so it sets `data-theme="dark"` not `data-theme-dark`
+    classSuffix: '',
+    dataValue: 'theme',
   },
 })

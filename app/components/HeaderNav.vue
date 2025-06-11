@@ -11,6 +11,7 @@
         <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
+    <ThemeToggle />
   </header>
 </template>
 
@@ -22,7 +23,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #f8f9fa;
+  background-color: var(--background-color);
   position: sticky;
   top: 0;
   width: 100%;
