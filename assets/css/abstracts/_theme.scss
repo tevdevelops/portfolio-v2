@@ -1,0 +1,13 @@
+@use 'colors';
+
+:root {
+  --background-color: #{colors.$color-light-background};
+  --text-color: #{colors.$color-light-text};
+  --link-color: #{colors.$color-light-link};
+}
+
+[data-theme='dark'] {
+  --background-color: #{colors.$color-dark-background};
+  --text-color: #{colors.$color-dark-text};
+  --link-color: #{colors.$color-dark-link};
+}
