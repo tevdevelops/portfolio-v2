@@ -1,10 +1,11 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { setup, mount } from '@nuxt/test-utils'
-import ThemeToggle from '@/app/components/ThemeToggle.vue'
+import { mount } from '@vue/test-utils'
+import { ThemeToggle } from '#components'
 
 let colorMode: { value: string; preference: string }
 
 vi.mock('#imports', async () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const actual = await vi.importActual<any>('#imports')
   return {
     ...actual,
@@ -16,7 +17,6 @@ beforeEach(async () => {
   colorMode = { value: 'light', preference: 'light' }
 })
 
-await setup({ server: false })
 
 describe('ThemeToggle', () => {
   it('toggles colorMode.preference', async () => {

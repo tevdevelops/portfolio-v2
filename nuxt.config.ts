@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/scripts',
-    '@nuxt/test-utils',
+    '@nuxt/test-utils/module',
     '@nuxt/ui',
     '@nuxtjs/color-mode',
   ],
@@ -16,9 +16,9 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   compatibilityDate: '2024-04-03',
-
   alias: {
     '@': './',
+    '~': './app',
     '@assets': './assets',
   },
   

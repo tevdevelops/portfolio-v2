@@ -37,7 +37,9 @@ const toggleTheme = () => {
   border-radius: 9999px;
   min-height: 40px;
   min-width: 40px;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.05);
@@ -49,7 +51,9 @@ const toggleTheme = () => {
     height: 1.5rem;
     stroke: var(--text-color);
     stroke-width: 1.5;
-    transition: stroke 0.3s ease, stroke-width 0.3s ease;
+    transition:
+      stroke 0.3s ease,
+      stroke-width 0.3s ease;
   }
 
   .placeholder {
