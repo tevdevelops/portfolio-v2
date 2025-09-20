@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import path from 'path'
+
 export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
@@ -17,9 +19,9 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2024-04-03',
   alias: {
-    '@': './',
-    '~': './app',
-    '@assets': './assets',
+    '@': path.resolve(__dirname, './'),
+    '~': path.resolve(__dirname, './app'),
+    '@assets': path.resolve(__dirname, './app/assets'),
   },
   
   css: ['@assets/css/main.scss'],
@@ -27,5 +29,18 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: '',
     dataValue: 'theme',
+  },
+
+  typescript: {
+    shim: false,
+    tsConfig: {
+      compilerOptions: {
+        moduleResolution: 'bundler',
+        allowImportingTsExtensions: true,
+        verbatimModuleSyntax: true,
+      },
+      include: ['./app/*'],
+      exclude: ['node_modules', 'test/**/*.test.ts', '**/testing/*.*'],
+    },
   },
 })

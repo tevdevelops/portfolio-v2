@@ -1,5 +1,7 @@
 import { defineConfig } from 'vitest/config'
 import { defineVitestProject } from '@nuxt/test-utils/config'
+import path from 'path'
+import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   test: {
@@ -9,6 +11,13 @@ export default defineConfig({
           name: 'unit',
           include: ['test/{e2e,unit}/*.{test,spec}.ts'],
           environment: 'node',
+        },
+        resolve: {
+          alias: {
+            '~': path.resolve(__dirname, './app'),
+            '@/': path.resolve(__dirname, './'),
+            '@assets': path.resolve(__dirname, './assets'),
+          },
         },
       },
       await defineVitestProject({
@@ -20,9 +29,12 @@ export default defineConfig({
       }),
     ],
   },
+  plugins: [vue()],
   resolve: {
     alias: {
-      '~': './app',
-    }
-  }
+      '~': path.resolve(__dirname, './app'),
+      '@/': path.resolve(__dirname, './'),
+      '@assets': path.resolve(__dirname, './assets'),
+    },
+  },
 })
