@@ -5,10 +5,11 @@
     <nav aria-label="Main Navigation">
       <ul role="menu">
         <li><NuxtLink to="/">Home</NuxtLink></li>
-        <li><NuxtLink to="/about">About</NuxtLink></li>
+        <li>About</li>
         <li><NuxtLink to="/portfolio">Portfolio</NuxtLink></li>
-        <li><NuxtLink to="/blog">Blog</NuxtLink></li>
-        <li><NuxtLink to="/contact">Contact</NuxtLink></li>
+        <li><NuxtLink to="/freelance">Freelance</NuxtLink></li>
+        <li><NuxtLink to="/labs">Labs</NuxtLink></li>
+        <li>Contact</li>
       </ul>
     </nav>
     <ThemeToggle />
