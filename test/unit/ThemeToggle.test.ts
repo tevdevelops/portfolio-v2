@@ -1,3 +1,5 @@
+// TODO: Finish Vitest setup and tests. also editor still cant find the component
+
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { mount } from '@vue/test-utils'
 import ThemeToggle from '~/components/ThemeToggle.vue'
@@ -16,7 +18,6 @@ vi.mock('#imports', async () => {
 beforeEach(() => {
   colorMode = { value: 'light', preference: 'light' }
 })
-
 
 describe('ThemeToggle', () => {
   it('renders correctly', () => {
