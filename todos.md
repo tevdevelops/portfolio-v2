@@ -3,9 +3,13 @@ TODOs
 - [x] Pick light/dark theme colors
 - [x] Add in tevdev logo
 - [x] figure out layout for home page
-- [ ] Fix scss import of the media breakpoint mixins
-- [ ] update header nav link styling
-- [ ] Update Square Logo stroke ugly
+- [x] Fix scss import of the media breakpoint mixins
+- [x] Finish Mobile Header Drawer
+- [x] Add Vueuse package
+- [x] update header nav link styling
+- [x] Update Square Logo stroke – ugly
+- [ ] Finish responsive Header Nav Styling
+- [ ] Figure out how to close mobile nav on router change/load. router hook
 - [ ] Now build it in code
   - [ ] Home Page
     - [ ] Hero
@@ -26,6 +30,7 @@ TODOs
   - [ ] Projects Display Page
   - [ ] Labs Display Page
   - [ ] Freelance Display Page
+- [ ] Finish Button Anchor tag links in header for about and contact sections
 - [ ] Finish integrating vitest and make sure it works with at least one spec
 - [ ] Cards for projects
 - [ ] Add some kind of fade when toggling between light/dark modes

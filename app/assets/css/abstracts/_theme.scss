@@ -2,6 +2,8 @@
 
 :root {
   --primary-color: #{colors.$color-light-primary};
+  --primary-dark-color: #{colors.$color-dark};
+  --primary-light-color: #{colors.$color-light};
   --background-color: #{colors.$color-light-background};
   --text-color: #{colors.$color-light-text};
   --link-color: #{colors.$color-light-link};

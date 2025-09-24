@@ -1,40 +1,75 @@
 <template>
-  <header class="container">
+  <header v-on-click-outside="() => (isOpen = false)" class="container">
     <a class="skip-link" href="#main">Skip to main content</a>
     <div class="container-content">
       <NuxtLink to="/" aria-label="Home">
         <LogoSvg />
       </NuxtLink>
-      <nav class="header-nav" aria-label="Main Navigation">
+      <nav
+        class="header-nav"
+        :class="{ 'header-nav--open': isOpen }"
+        aria-label="Main Navigation"
+      >
         <ul role="menu">
-          <li><NuxtLink to="/">Home</NuxtLink></li>
-          <li>About</li>
-          <li><NuxtLink to="/portfolio">Portfolio</NuxtLink></li>
-          <li><NuxtLink to="/freelance">Freelance</NuxtLink></li>
-          <li><NuxtLink to="/labs">Labs</NuxtLink></li>
-          <li>Contact</li>
+          <li><NuxtLink to="/" class="header-nav__item">Home</NuxtLink></li>
+          <li>
+            <button class="header-nav__item">About</button>
+          </li>
+          <li>
+            <NuxtLink to="/portfolio" class="header-nav__item"
+              >Portfolio</NuxtLink
+            >
+          </li>
+          <li>
+            <NuxtLink to="/freelance" class="header-nav__item"
+              >Freelance</NuxtLink
+            >
+          </li>
+          <li><NuxtLink to="/labs" class="header-nav__item">Labs</NuxtLink></li>
+          <li>
+            <button class="header-nav__item">Contact</button>
+          </li>
         </ul>
       </nav>
-      <ThemeToggle />
+      <div class="theme-toggle-container">
+        <ThemeToggle />
+      </div>
       <!-- Hamburger Icon -->
-      <button aria-label="Toggle Menu Drawer" @click="toggleDrawer">
-        <Menu key="menu" class="icon" />
+      <button
+        aria-label="Toggle Menu Drawer"
+        class="header-nav__toggle"
+        @click="toggleDrawer"
+      >
+        <Menu v-if="!isOpen" key="menu" class="icon" />
+        <X v-if="isOpen" key="x" class="icon" />
       </button>
     </div>
   </header>
 </template>
 
 <script setup lang="ts">
-import { Menu } from 'lucide-vue-next'
+import { Menu, X } from 'lucide-vue-next'
+import { vOnClickOutside } from '@vueuse/components'
+
+const isOpen = ref(false)
 
 function toggleDrawer(): void {
-  console.log('Toggle Drawer')
+  isOpen.value = !isOpen.value
 }
+
+function handleResize(): void {
+  if (window.innerWidth >= 1024) {
+    isOpen.value = false
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+})
 </script>
 
 <style scoped lang="scss">
-// TODO: fix this import
-// @use 'abstracts';
+@use 'styles/helpers' as *;
 
 header {
   background-color: var(--background-color);
@@ -47,6 +82,12 @@ ul {
   display: flex;
   justify-content: space-between;
   gap: 0.5rem;
+  flex-direction: column;
+  align-items: center;
+
+  @include respond(lg) {
+    // gap: 1.5rem;
+  }
 }
 
 .skip-link {
@@ -59,17 +100,74 @@ ul {
 }
 
 .container-content {
-  border-bottom: 1px solid var(--border-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  position: relative;
+
+  @include respond(lg) {
+    border-bottom: 1px solid var(--border-color);
+  }
 }
 
 .header-nav {
-  // @include respond(md) {
-  //   display: flex;
-  // }
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: var(--background-color);
+  top: 100%;
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+
+  @include respond(lg) {
+    display: flex;
+    position: relative;
+  }
+
+  &--open {
+    height: 350px;
+    // padding: 2rem;
+  }
+
+  &__item {
+    color: var(--text-color);
+    display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+    font-size: 1.25rem;
+
+    &:hover,
+    &:focus {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+  }
+
+  &__toggle {
+    @include respond(lg) {
+      display: none;
+    }
+  }
+}
+
+.theme-toggle-container {
+  position: fixed;
+  padding: 0.25rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 10;
+  border-radius: 100%;
+  background-color: var(--background-color);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3), 0px 1px 3px rgba(0, 0, 0, 0.2);
+
+  @include respond(lg) {
+    position: unset;
+  }
 }
 </style>

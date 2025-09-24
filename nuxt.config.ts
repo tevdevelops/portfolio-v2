@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxtjs/color-mode',
     '@nuxtjs/google-fonts',
+    '@vueuse/nuxt',
   ],
   devtools: { enabled: true },
   future: {
@@ -22,6 +23,8 @@ export default defineNuxtConfig({
     '@': path.resolve(__dirname, './'),
     '~': path.resolve(__dirname, './app'),
     '@assets': path.resolve(__dirname, './app/assets'),
+    styles: path.resolve(__dirname, './app/assets/css'),
+    'styles/*': path.resolve(__dirname, './app/assets/css/*'),
   },
 
   css: ['@assets/css/main.scss'],

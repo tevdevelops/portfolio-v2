@@ -1,13 +1,17 @@
+// Color Variables
+$color-dark: #121212;
+$color-light: #eaf0d1;
+
 // Light Theme
-$color-light-background: #eaf0d1;
-$color-light-text: #121212;
+$color-light-background: $color-light;
+$color-light-text: $color-dark;
 $color-light-link: #2e603f;
-$color-light-border: #2e603f;
+$color-light-border: $color-dark;
 $color-light-primary: #2e603f;
 
 // Dark Theme
 $color-dark-background: #1b1f0a;
-$color-dark-text: #eaf0d1;
+$color-dark-text: $color-light;
 $color-dark-link: #2e603f;
-$color-dark-border: #eaf0d1;
-$color-dark-primary: #eaf0d1;
+$color-dark-border: $color-light;
+$color-dark-primary: $color-light;

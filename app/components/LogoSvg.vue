@@ -16,7 +16,14 @@
       />
       <path id="t" d="M83.4,57.3v45.1H70.9V57.3H55.1V46.5h44.2v10.8H83.4z" />
       <g>
-        <line class="st0" x1="249.8" y1="47" x2="48" y2="247.1" />
+        <line
+          class="st0"
+          x1="249.8"
+          y1="47"
+          x2="48"
+          y2="247.1"
+          stroke-width="6"
+        />
       </g>
       <g>
         <path d="M293,8v285H8V8H293 M301,0H0v301h301V0L301,0z" />
@@ -71,8 +78,8 @@
 <style lang="scss" scoped>
 .logo {
   width: auto;
-  fill: var(--primary-color);
-  stroke: var(--primary-color);
+  fill: var(--text-color);
+  stroke: var(--text-color);
 
   &--long {
     height: 15px;
