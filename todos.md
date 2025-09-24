@@ -1,17 +1,32 @@
 TODOs
 
 - [x] Pick light/dark theme colors
-- [ ] Finish integrating vitest and make sure it works with at least one spec
-- [ ] Add in tevdev logo
-- [ ] update header nav link styling
+- [x] Add in tevdev logo
 - [x] figure out layout for home page
+- [ ] Fix scss import of the media breakpoint mixins
+- [ ] update header nav link styling
+- [ ] Update Square Logo stroke ugly
 - [ ] Now build it in code
-  - [ ] Hero
-  - [ ] CTAs Section (Work, Freelance, Labs)
-  - [ ] About Me
-  - [ ] SKills
-  - [ ] Experience
-  - [ ] Contact/Socials Info
+  - [ ] Home Page
+    - [ ] Hero
+    - [ ] CTAs Section (Work, Freelance, Labs)
+    - [ ] About Me
+    - [ ] SKills
+    - [ ] Experience
+    - [ ] Contact/Socials Info
+  - [ ] Projects Listings Page
+    - [ ] intro
+    - [ ] Grid
+  - [ ] Labs Listing Page
+    - [ ] intro
+    - [ ] Grid
+  - [ ] Freelance Listing Page
+    - [ ] intro
+    - [ ] Grid
+  - [ ] Projects Display Page
+  - [ ] Labs Display Page
+  - [ ] Freelance Display Page
+- [ ] Finish integrating vitest and make sure it works with at least one spec
 - [ ] Cards for projects
 - [ ] Add some kind of fade when toggling between light/dark modes
 - [ ] add intro animation, only for first time users

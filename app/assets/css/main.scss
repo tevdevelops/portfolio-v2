@@ -1,11 +1,19 @@
 @use 'abstracts';
 @use 'base/reset';
 
+// TODO: add some global fonts, button styles
+
 body {
   background-color: var(--background-color);
   color: var(--text-color);
+  font-family: 'Commissioner', sans-serif;
 }
 
 a {
   color: var(--link-color);
+}
+
+.container {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }

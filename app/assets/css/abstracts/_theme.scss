@@ -1,13 +1,17 @@
 @use 'colors';
 
 :root {
+  --primary-color: #{colors.$color-light-primary};
   --background-color: #{colors.$color-light-background};
   --text-color: #{colors.$color-light-text};
   --link-color: #{colors.$color-light-link};
+  --border-color: #{colors.$color-light-border};
 }
 
 [data-theme='dark'] {
   --background-color: #{colors.$color-dark-background};
   --text-color: #{colors.$color-dark-text};
   --link-color: #{colors.$color-dark-link};
+  --border-color: #{colors.$color-dark-border};
+  --primary-color: #{colors.$color-dark-primary};
 }

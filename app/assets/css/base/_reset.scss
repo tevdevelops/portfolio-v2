@@ -193,3 +193,30 @@ textarea:not([rows]) {
 :target {
   scroll-margin-block: 5ex;
 }
+
+/* Buttons */
+button {
+  /* Remove default border */
+  border: none;
+
+  /* Remove default background color */
+  background-color: transparent;
+
+  /* Inherit font styles from parent */
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+
+  /* Remove default padding */
+  padding: 0;
+
+  /* Ensure consistent box model */
+  box-sizing: border-box;
+
+  /* Change cursor to pointer on hover */
+  cursor: pointer;
+
+  /* Remove default text decoration (for links styled as buttons) */
+  text-decoration: none;
+}

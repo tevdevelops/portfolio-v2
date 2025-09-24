@@ -3,7 +3,6 @@ import path from 'path'
 
 export default defineNuxtConfig({
   modules: [
-    '@nuxt/content',
     '@nuxt/eslint',
     '@nuxt/fonts',
     '@nuxt/icon',
@@ -12,6 +11,7 @@ export default defineNuxtConfig({
     '@nuxt/test-utils/module',
     '@nuxt/ui',
     '@nuxtjs/color-mode',
+    '@nuxtjs/google-fonts',
   ],
   devtools: { enabled: true },
   future: {
@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     '~': path.resolve(__dirname, './app'),
     '@assets': path.resolve(__dirname, './app/assets'),
   },
-  
+
   css: ['@assets/css/main.scss'],
 
   colorMode: {
@@ -33,6 +33,7 @@ export default defineNuxtConfig({
 
   typescript: {
     shim: false,
+    typeCheck: true,
     tsConfig: {
       compilerOptions: {
         moduleResolution: 'bundler',
@@ -42,5 +43,12 @@ export default defineNuxtConfig({
       include: ['./app/*'],
       exclude: ['node_modules', 'test/**/*.test.ts', '**/testing/*.*'],
     },
+  },
+
+  googleFonts: {
+    families: {
+      Commissioner: true,
+    },
+    fontsDir: 'assets/fonts',
   },
 })
