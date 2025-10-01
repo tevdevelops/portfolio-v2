@@ -1,5 +1,9 @@
 <template>
-  <header v-on-click-outside="() => (isOpen = false)" class="container">
+  <header
+    v-on-click-outside="() => (isOpen = false)"
+    class="container"
+    @keydown="handleEscape"
+  >
     <a class="skip-link" href="#main">Skip to main content</a>
     <div class="container-content">
       <NuxtLink to="/" aria-label="Home">
@@ -55,6 +59,12 @@ const { isOpen, toggle } = useMobileNav()
 
 function handleResize(): void {
   if (window.innerWidth >= 1024) {
+    isOpen.value = false
+  }
+}
+
+function handleEscape(event: KeyboardEvent): void {
+  if (event.key === 'Escape') {
     isOpen.value = false
   }
 }

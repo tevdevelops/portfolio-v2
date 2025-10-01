@@ -9,7 +9,7 @@ TODOs
 - [x] update header nav link styling
 - [x] Update Square Logo stroke – ugly
 - [x] Finish responsive Header Nav Styling
-- [ ] Figure out how to close mobile nav on router change/load. router hook
+- [x] Figure out how to close mobile nav on router change/load. router hook
 - [ ] Now build it in code
   - [ ] Home Page
     - [ ] Hero
