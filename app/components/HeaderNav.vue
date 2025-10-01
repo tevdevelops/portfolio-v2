@@ -38,7 +38,7 @@
       <button
         aria-label="Toggle Menu Drawer"
         class="header-nav__toggle"
-        @click="toggleDrawer"
+        @click="toggle"
       >
         <Menu v-if="!isOpen" key="menu" class="icon" />
         <X v-if="isOpen" key="x" class="icon" />
@@ -51,11 +51,7 @@
 import { Menu, X } from 'lucide-vue-next'
 import { vOnClickOutside } from '@vueuse/components'
 
-const isOpen = ref(false)
-
-function toggleDrawer(): void {
-  isOpen.value = !isOpen.value
-}
+const { isOpen, toggle } = useMobileNav()
 
 function handleResize(): void {
   if (window.innerWidth >= 1024) {
