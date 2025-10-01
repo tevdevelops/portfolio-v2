@@ -10,7 +10,7 @@
         :class="{ 'header-nav--open': isOpen }"
         aria-label="Main Navigation"
       >
-        <ul role="menu">
+        <ul role="menu" class="header-nav__list">
           <li><NuxtLink to="/" class="header-nav__item">Home</NuxtLink></li>
           <li>
             <button class="header-nav__item">About</button>
@@ -78,18 +78,6 @@ header {
   width: 100%;
 }
 
-ul {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.5rem;
-  flex-direction: column;
-  align-items: center;
-
-  @include respond(lg) {
-    // gap: 1.5rem;
-  }
-}
-
 .skip-link {
   position: absolute;
   left: -999px;
@@ -126,13 +114,25 @@ ul {
   transition: height 0.3s ease-in-out;
 
   @include respond(lg) {
-    display: flex;
     position: relative;
+    border-bottom: none;
+    height: auto;
   }
 
   &--open {
-    height: 350px;
-    // padding: 2rem;
+    height: 300px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond(lg) {
+      flex-direction: row;
+    }
   }
 
   &__item {
@@ -168,6 +168,7 @@ ul {
 
   @include respond(lg) {
     position: unset;
+    box-shadow: none;
   }
 }
 </style>

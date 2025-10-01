@@ -8,7 +8,7 @@ TODOs
 - [x] Add Vueuse package
 - [x] update header nav link styling
 - [x] Update Square Logo stroke – ugly
-- [ ] Finish responsive Header Nav Styling
+- [x] Finish responsive Header Nav Styling
 - [ ] Figure out how to close mobile nav on router change/load. router hook
 - [ ] Now build it in code
   - [ ] Home Page
