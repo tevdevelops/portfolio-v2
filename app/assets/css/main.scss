@@ -7,6 +7,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: 'Commissioner', sans-serif;
+  line-height: 1.25;
 }
 
 a {
@@ -16,4 +17,22 @@ a {
 .container {
   padding-left: 2rem;
   padding-right: 2rem;
+
+  @include respond(lg) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  @include respond(xl) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.page-block {
+  margin-bottom: 1rem;
+
+  @include respond(md) {
+    margin-bottom: 2rem;
+  }
 }
