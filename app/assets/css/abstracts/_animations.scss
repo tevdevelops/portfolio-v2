@@ -1,0 +1,44 @@
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Base (start hidden) */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px); /* default: slide up a touch */
+  transition: opacity 480ms ease, transform 480ms ease;
+  will-change: opacity, transform;
+}
+
+/* Visible state */
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Directional variants (opt-in via class) */
+.reveal-up {
+  transform: translateY(12px);
+}
+.reveal-down {
+  transform: translateY(-12px);
+}
+.reveal-left {
+  transform: translateX(12px);
+}
+.reveal-right {
+  transform: translateX(-12px);
+}
+
+/* Speed variants (optional) */
+.reveal-fast {
+  transition-duration: 280ms;
+}
+.reveal-slow {
+  transition-duration: 700ms;
+}
